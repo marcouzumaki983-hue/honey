@@ -1,0 +1,689 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Mahutarma 💗</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Poppins",Arial,sans-serif;
+    overflow:hidden;
+}
+
+/* ---------- GENERAL ---------- */
+
+.slide{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:25px;
+    opacity:0;
+    pointer-events:none;
+    transition:1s ease;
+    overflow:hidden;
+}
+
+.slide.active{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.card{
+    width:min(650px,92%);
+    padding:40px 25px;
+    border-radius:35px;
+    background:rgba(255,255,255,.72);
+    backdrop-filter:blur(15px);
+    box-shadow:0 20px 60px rgba(0,0,0,.15);
+    animation:cardIn 1.2s ease;
+    position:relative;
+    z-index:5;
+}
+
+@keyframes cardIn{
+    0%{
+        transform:translateY(80px) scale(.7);
+        opacity:0;
+    }
+    100%{
+        transform:translateY(0) scale(1);
+        opacity:1;
+    }
+}
+
+h1{
+    font-size:clamp(38px,8vw,65px);
+    margin-bottom:18px;
+}
+
+h2{
+    font-size:clamp(28px,6vw,45px);
+    margin-bottom:18px;
+}
+
+p{
+    font-size:19px;
+    line-height:1.8;
+}
+
+button{
+    margin-top:25px;
+    border:0;
+    padding:14px 30px;
+    border-radius:50px;
+    font-size:17px;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+.next{
+    background:#e83e8c;
+}
+
+/* ---------- FLOATING EMOJIS ---------- */
+
+.emoji{
+    position:absolute;
+    bottom:-60px;
+    font-size:30px;
+    animation:floatEmoji linear infinite;
+    opacity:.8;
+    z-index:1;
+}
+
+@keyframes floatEmoji{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+    15%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+
+/* ---------- SLIDE 1 ---------- */
+
+.slide1{
+    background:linear-gradient(135deg,#ffd1e3,#ffe8f1,#ffc1d9);
+}
+
+.slide1 h1{
+    color:#d63384;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.06);
+    }
+}
+
+.slide1 p{
+    color:#71304d;
+}
+
+
+/* ---------- SLIDE 2 ---------- */
+
+.slide2{
+    background:linear-gradient(135deg,#d9f7ff,#c8ecff,#e4d7ff);
+}
+
+.slide2 h2{
+    color:#7b4bc4;
+}
+
+.slide2 .card{
+    animation:slideLeft 1.2s ease;
+}
+
+@keyframes slideLeft{
+    from{
+        transform:translateX(-100vw) rotate(-10deg);
+        opacity:0;
+    }
+    to{
+        transform:translateX(0) rotate(0);
+        opacity:1;
+    }
+}
+
+
+/* ---------- SLIDE 3 ---------- */
+
+.slide3{
+    background:linear-gradient(135deg,#fff0b8,#ffe4a8,#ffd4c4);
+}
+
+.slide3 h2{
+    color:#d46b2c;
+}
+
+.slide3 .card{
+    animation:bounceIn 1.3s ease;
+}
+
+@keyframes bounceIn{
+    0%{transform:scale(.2);}
+    60%{transform:scale(1.12);}
+    100%{transform:scale(1);}
+}
+
+
+/* ---------- SLIDE 4 GAME ---------- */
+
+.slide4{
+    background:linear-gradient(135deg,#d7ffd9,#bff5cf,#d4f8ee);
+}
+
+.slide4 h2{
+    color:#219653;
+}
+
+.gameArea{
+    height:280px;
+    margin-top:20px;
+    border-radius:25px;
+    background:rgba(255,255,255,.65);
+    position:relative;
+    overflow:hidden;
+}
+
+.gameHeart{
+    position:absolute;
+    font-size:38px;
+    cursor:pointer;
+    animation:heartAppear .5s ease;
+    user-select:none;
+}
+
+@keyframes heartAppear{
+    from{
+        transform:scale(0) rotate(-180deg);
+    }
+    to{
+        transform:scale(1) rotate(0);
+    }
+}
+
+.score{
+    font-size:21px;
+    color:#198754;
+    font-weight:bold;
+}
+
+.start{
+    background:#20a464;
+}
+
+
+/* ---------- SLIDE 5 ---------- */
+
+.slide5{
+    background:linear-gradient(
+        135deg,
+        #ff9fc9,
+        #ffc1dc,
+        #ffd6eb,
+        #ffabd2
+    );
+}
+
+.slide5 .card{
+    background:rgba(255,255,255,.22);
+    color:white;
+    animation:finalZoom 2s ease;
+}
+
+@keyframes finalZoom{
+    from{
+        transform:scale(0) rotate(-5deg);
+        opacity:0;
+    }
+    to{
+        transform:scale(1) rotate(0);
+        opacity:1;
+    }
+}
+
+.slide5 h1{
+    color:white;
+    text-shadow:0 5px 15px #c2185b;
+}
+
+.slide5 p{
+    color:white;
+}
+
+.signature{
+    font-size:26px;
+    font-weight:bold;
+    margin-top:25px;
+    color:white;
+    animation:glow 2s infinite;
+}
+
+@keyframes glow{
+    50%{
+        text-shadow:0 0 25px white;
+    }
+}
+
+
+/* ---------- NAVIGATION ---------- */
+
+.dots{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:8px;
+    z-index:20;
+}
+
+.dot{
+    width:11px;
+    height:11px;
+    background:white;
+    opacity:.6;
+    border-radius:50%;
+}
+
+.dot.active{
+    opacity:1;
+    transform:scale(1.3);
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- ================= SLIDE 1 ================= -->
+
+<section class="slide slide1 active">
+
+    <div class="card">
+
+        <div style="font-size:55px; margin-bottom:10px;">
+            🥺💗🌸
+        </div>
+
+        <h1>Hey Mahutarma 💕</h1>
+
+        <p>
+            Mona... I made this little surprise
+            especially for you. 🥹
+            <br><br>
+            I don't know if a webpage can say
+            everything that's in my heart...
+            but I wanted to try. 💌
+        </p>
+
+        <button class="next" onclick="nextSlide()">
+            Open My Heart 💗
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SLIDE 2 ================= -->
+
+<section class="slide slide2">
+
+    <div class="card">
+
+        <div style="font-size:55px;">
+            🥺🫶🏻💐
+        </div>
+
+        <h2>I'm Really Sorry 💔</h2>
+
+        <p>
+            Mahutarma, I'm really,
+            really sorry for everything
+            I did that hurt you. 🥺
+            <br><br>
+
+            I know saying "sorry" doesn't
+            instantly fix everything,
+            but I genuinely mean it. ❤️‍🩹
+            <br><br>
+
+            You deserved better from me.
+        </p>
+
+        <button class="next" onclick="nextSlide()">
+            Keep Going 🌷
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SLIDE 3 ================= -->
+
+<section class="slide slide3">
+
+    <div class="card">
+
+        <div style="font-size:55px;">
+            🌻💞✨
+        </div>
+
+        <h2>A Little Promise 🫶🏻</h2>
+
+        <p>
+            I can't promise that I'll
+            never make mistakes...
+            <br><br>
+
+            But I can promise that I'll
+            try to learn from them,
+            listen better,
+            and care about your feelings. 🌸
+            <br><br>
+
+            Because you matter to me,
+            Mona. 💗
+        </p>
+
+        <button class="next" onclick="nextSlide()">
+            One More Thing 🎀
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SLIDE 4 GAME ================= -->
+
+<section class="slide slide4">
+
+    <div class="card">
+
+        <div style="font-size:50px;">
+            🎮💚✨
+        </div>
+
+        <h2>Catch My Hearts 💕</h2>
+
+        <p>
+            Mahutarma, here's a tiny game for you! 😭
+            <br>
+            Catch 10 hearts before time runs out. ❤️
+        </p>
+
+        <div class="score">
+            Score: <span id="score">0</span>
+            &nbsp; | &nbsp;
+            Time: <span id="time">20</span>
+        </div>
+
+        <div class="gameArea" id="gameArea"></div>
+
+        <button class="start" onclick="startGame()">
+            Start Game 🎮
+        </button>
+
+        <button class="next" onclick="nextSlide()">
+            Finish 💌
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SLIDE 5 ================= -->
+
+<section class="slide slide5">
+
+    <div class="card">
+
+        <div style="font-size:65px;">
+            💗🌸🦋✨
+        </div>
+
+        <h1>Mona ❤️</h1>
+
+        <p>
+            Mahutarma...
+            <br><br>
+
+            No matter how simple this little
+            surprise is, I made it with a
+            genuine heart. 🥹💗
+            <br><br>
+
+            I'm sorry for my mistakes.
+            I hope this little game made
+            you smile even for a moment. 🌷
+            <br><br>
+
+            Take care of yourself,
+            beautiful soul. 🫶🏻
+        </p>
+
+        <div class="signature">
+            Sry from ur love Razz 🥹❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DOTS ================= -->
+
+<div class="dots">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+</div>
+
+
+<script>
+
+/* ---------- SLIDES ---------- */
+
+let currentSlide=0;
+
+const slides=document.querySelectorAll(".slide");
+const dots=document.querySelectorAll(".dot");
+
+function nextSlide(){
+
+    if(currentSlide < slides.length-1){
+
+        slides[currentSlide].classList.remove("active");
+        dots[currentSlide].classList.remove("active");
+
+        currentSlide++;
+
+        slides[currentSlide].classList.add("active");
+        dots[currentSlide].classList.add("active");
+    }
+}
+
+
+/* ---------- FLOATING EMOJIS ---------- */
+
+const emojis=[
+    "❤️","💕","💗","💖","💘",
+    "🌸","🌷","🌹","🦋","✨",
+    "🥺","🫶🏻","💐","🎀"
+];
+
+function createEmoji(){
+
+    const e=document.createElement("div");
+
+    e.className="emoji";
+
+    e.innerText=
+        emojis[Math.floor(Math.random()*emojis.length)];
+
+    e.style.left=Math.random()*100+"vw";
+
+    e.style.animationDuration=
+        (5+Math.random()*5)+"s";
+
+    e.style.fontSize=
+        (20+Math.random()*25)+"px";
+
+    document.body.appendChild(e);
+
+    setTimeout(()=>{
+        e.remove();
+    },10000);
+}
+
+setInterval(createEmoji,500);
+
+
+/* ---------- HEART GAME ---------- */
+
+let score=0;
+let time=20;
+let gameRunning=false;
+let heartInterval;
+let timerInterval;
+
+function startGame(){
+
+    if(gameRunning) return;
+
+    gameRunning=true;
+    score=0;
+    time=20;
+
+    document.getElementById("score").innerText=score;
+    document.getElementById("time").innerText=time;
+
+    const area=document.getElementById("gameArea");
+    area.innerHTML="";
+
+    heartInterval=setInterval(createGameHeart,700);
+
+    timerInterval=setInterval(()=>{
+
+        time--;
+
+        document.getElementById("time").innerText=time;
+
+        if(time<=0){
+
+            stopGame();
+
+            if(score>=10){
+                alert(
+                    "You caught 10 hearts! 💗🥹"
+                );
+            }else{
+                alert(
+                    "Aww! Razz still sends you unlimited hearts! ❤️"
+                );
+            }
+        }
+
+    },1000);
+}
+
+
+function createGameHeart(){
+
+    const area=document.getElementById("gameArea");
+
+    const heart=document.createElement("div");
+
+    heart.className="gameHeart";
+
+    const heartTypes=[
+        "❤️","💗","💖","💘","💕"
+    ];
+
+    heart.innerText=
+        heartTypes[
+            Math.floor(Math.random()*heartTypes.length)
+        ];
+
+    heart.style.left=
+        Math.random()*85+"%";
+
+    heart.style.top=
+        Math.random()*75+"%";
+
+    heart.onclick=function(){
+
+        score++;
+
+        document.getElementById("score").innerText=score;
+
+        heart.remove();
+
+        if(score>=10){
+
+            stopGame();
+
+            setTimeout(()=>{
+                alert(
+                    "You caught my 10 hearts! 💗🥹🌸"
+                );
+            },100);
+        }
+    };
+
+    area.appendChild(heart);
+
+    setTimeout(()=>{
+        if(heart.parentElement){
+            heart.remove();
+        }
+    },1500);
+}
+
+
+function stopGame(){
+
+    clearInterval(heartInterval);
+    clearInterval(timerInterval);
+
+    gameRunning=false;
+}
+
+</script>
+
+</body>
+</html>
+```
